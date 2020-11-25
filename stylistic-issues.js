@@ -48,7 +48,7 @@ module.exports = {
 
     // 设置注释的第一个单词是否允许小写字母开头。
     // 第一个单词可以使用小写字母开头。
-    "capitalized-comments": ["error", "never"],
+    // "capitalized-comments": ["error", "never"],
 
     // --fix 设置对象和数组字面量是否使用尾随逗号。
     // 当最后一项和 ] } 在不同行的时候，必须使用尾随逗号；当最后一项和 ] } 在同一行的时候，禁止使用尾随逗号
@@ -88,7 +88,7 @@ module.exports = {
 
     // 设置强制使用函数声明或函数表达式来定义函数。
     // 强制使用函数表达式，但是允许使用箭头函数
-    "func-style": ["error", "expression"],
+    // "func-style": ["error", "expression"],
     
     // --fix 设置函数调用时参数是否需要强制换行
     // 如果前两个参数之间有换行，则所有参数之间都要换行；如果前两个参数之间没有换行，则所有参数之间都不能换行；
@@ -104,10 +104,10 @@ module.exports = {
 
     // 设置标识符允许的最小/最大的长度。
     "id-length": ["error", {
-      // 最少2个字符
-      "min": 2,
-      // 最少20个字符
-      "max": 20,
+      // 最少1个字符
+      "min": 1,
+      // 最少30个字符
+      "max": 30,
     }],
 
     // 要求赋值和函数定义中的标识符与指定的正则表达式匹配。
@@ -120,7 +120,10 @@ module.exports = {
 
     // --fix 设置缩进。默认 4 空格。
     // 设置缩进 2 个空格
-    "indent": ["error", 2],
+    "indent": ["error", 2, {
+      // 指定 switch 语句中的 case 子句的缩进级别
+      "SwitchCase": 1,
+    }],
 
     // --fix 设置 JSX 的属性是强制使用双引号，还是强制使用单引号。
     // 强制使用双引号
@@ -148,7 +151,7 @@ module.exports = {
 
     // 设置单行注释能够出现在代码的上面还是代码的旁边。
     // 强制单行注释出现在代码的上面
-    "line-comment-position": ["error", "above"],
+    // "line-comment-position": ["error", "above"],
 
     // --fix 设置使用那种风格的换行符。屏蔽不同的操作系统、不同的 VCS 版本控制系统、不同编辑器的差异。
     // 强制使用 Unix 换行符
@@ -156,14 +159,14 @@ module.exports = {
 
     // --fix 设置在注释之前/之后是否需要空白行。
     "lines-around-comment": ["error", {
-      // (default) 块级注释前面需要空一个行
+      // 块级注释前面需要空一个行
       "beforeBlockComment": true, 
       // 块级注释后面需要空一个行
-      "afterBlockComment": true, 
+      // "afterBlockComment": true, 
       // 行级注释前面需要空一个行
-      "beforeLineComment": true, 
+      // "beforeLineComment": true, 
       // 行级注释后面需要空一个行
-      "afterLineComment": true, 
+      // "afterLineComment": true, 
       // 允许注释出现在代码块的开头
       "allowBlockStart": true, 
       // 允许注释出现在代码块的末尾
@@ -198,11 +201,11 @@ module.exports = {
     // 设置一行代码最多可以有多少个 Unicode 字符。
     "max-len": ["error", {
       // 设置代码行的最大长度
-      "code": 80,
+      "code": 200,
       // 指定一个 tab 占用的字符宽度
       "tabWidth": 2,
       // 设置注释行的最大长度，默认和代码行的设置相同
-      "comments": 80,
+      "comments": 200,
       // 指定忽略正则表达式。只能忽略单行，如果使用 YAML 或者 JSON 格式的配置文件，需要两次转义
       // "ignorePattern": true,
       // 忽略所有注释
@@ -248,18 +251,16 @@ module.exports = {
     "max-params": ["error", 3],
 
     // 设置函数代码块中语句的最大数量。
-    // 设置函数代码块中语句的最大数量
-    "max-statements": ["error", 10, {
+    "max-statements": ["error", 20, {
       // 忽略顶层函数
       "ignoreTopLevelFunctions": true,
     }],
 
     // 设置每行代码中语句的最大数量。
-    "max-statements-per-line": ["error", { "max": 1 }],
+    "max-statements-per-line": ["error", { "max": 2 }],
 
     // --fix 设置多行注释的风格。
-    // 禁止使用连续的单行注释而使用块级注释，并且要求块级注释的每一行前面具有对齐的 * 星号。
-    "multiline-comment-style": ["error", "starred-block"],
+    // "multiline-comment-style": ["error", "starred-block"],
 
     // 设置三元表达式的操作符能否被换行符隔开。
     "multiline-ternary": ["error", "never"],
@@ -269,7 +270,7 @@ module.exports = {
       // 要求所有使用 `new` 操作符调用的函数都是大写开头的函数
       "newIsCap": true,
       // 要求所有大写开头的函数只能使用 `new` 操作符调用
-      "capIsNew": true,
+      "capIsNew": false,
       // 一个字符串数组，允许指定的小写开头的函数可以被 `new` 操作符调用
       // "newIsCapExceptions",
       // 一个正则表示式，允许指定的小写开头的函数可以被 `new` 操作符调用
@@ -301,7 +302,7 @@ module.exports = {
     "no-continue": ["error"],
 
     // 启用此规则表示禁止在代码和注释在同一行。
-    "no-inline-comments": ["error"],
+    // "no-inline-comments": ["error"],
     
     // --fix 启用此规则表示禁止 if 语句是 else 代码块唯一的语句。
     "no-lonely-if": ["error"],
@@ -329,9 +330,9 @@ module.exports = {
       // 设置最多可以连续空多少行。
       "max": 2,
       // 设置在文件末尾最多可以连续空多少行。
-      "maxEOF": 2,
+      "maxEOF": 0,
       // 设置在文件开头最多可以连续空多少行。      
-      "maxBOF": 2,
+      "maxBOF": 0,
     }],
     
     // 启用此规则表示在有 else 分支的 if 语句中和三元表达式中不允许使用否定条件
@@ -360,7 +361,7 @@ module.exports = {
     }],
 
     // 启用此规则表示禁止使用三元运算符。
-    "no-ternary": ["error"],
+    // "no-ternary": ["error"],
 
     // --fix 设置是否允许在行尾有空格
     "no-trailing-spaces": ["error", {
@@ -422,12 +423,12 @@ module.exports = {
     // --fix 启用此规则表示强制每个属性都在单独的行上。
     "object-property-newline": ["error", {
       // 如果设置为 true 对象字面量的所有属性要么都在同一行，要么都在单独的行，不会自动将多行整理成一行。
-      "allowAllPropertiesOnSameLine": true,
+      // "allowAllPropertiesOnSameLine": true,
     }],
 
     // --fix 设置函数(var)或块级(let const)作用域的变量声明方式是一起声明还是分开声明。
     // 允许一个作用域多个变量声明，但是连续的变量声明必须合并为一个变量声明
-    "one-var": ["error", "consecutive"],
+    // "one-var": ["error", "consecutive"],
     
     // --fix 启用此规则表示每个变量声明都需要换行。
     // 变量初始化的时候强制换行
@@ -443,7 +444,7 @@ module.exports = {
 
     // --fix 设置块语句的开头和结尾是否有空行。
     // 要求在块语句和 class 类的开头和结尾必须有空行
-    "padded-blocks": ["error", "always", {
+    "padded-blocks": ["error", "never", {
       // 允许单行块
       "allowSingleLineBlocks": true,
     }],
@@ -493,25 +494,25 @@ module.exports = {
 
     // 设置是否根据对象表达式中定义的属性名称的第一个字符按照字母顺序进行属性排序。
     // 强制属性按升序排列
-    "sort-keys": ["error", "asc", {
-      // 强制属性按大小写排列，大写排前
-      "caseSensitive": true,
-      // 指定属性个数超过多少个才强制排序
-      "minKeys": 2,
-      // 针对属性名是数字，不使用自然排序表示还是按照第一个字符进行排序，如果设置为 true 表示会按照人类的认知 3 < 10，那么 3 排在前面
-      "natural": true,
-    }],
+    // "sort-keys": ["error", "asc", {
+    //   // 强制属性按大小写排列，大写排前
+    //   "caseSensitive": true,
+    //   // 指定属性个数超过多少个才强制排序
+    //   "minKeys": 2,
+    //   // 针对属性名是数字，不使用自然排序表示还是按照第一个字符进行排序，如果设置为 true 表示会按照人类的认知 3 < 10，那么 3 排在前面
+    //   "natural": true,
+    // }],
 
     // --fix 设置是否根据同一块中变量名称的第一个字符按照字母顺序进行属性排序。
-    "sort-vars": ["error"],
+    // "sort-vars": ["error"],
 
     // --fix 设置在代码块前是否有空格。仅适用于不是以新行开头的块。
     // 代码块前至少有一个空格。
     "space-before-blocks": ["error", "always"],
 
     // --fix 函数定义的时候，设置函数名称/函数关键字与开始括号之间是否有空格。默认匿名函数不需要空格。
-    // 强制有空格
-    "space-before-function-paren": ["error", "always"],
+    // 禁止有空格
+    "space-before-function-paren": ["error", "never"],
 
     // --fix 设置所有的小括号中，开始括号和结束括号与括号里面的内容之间是否有一个或多个空格。
     // 禁止有空格
@@ -528,7 +529,7 @@ module.exports = {
       // 设置为 true 表示规则适用于单词一元运算符： `new`, `delete`, `typeof`, `void`, `yield`
       words: true,
       // 设置为 true 表示规则适用于单词一元运算符： `-` `+` `--` `++` `!` `!!`      
-      nonwords: true,
+      nonwords: false,
     }],
 
     // --fix 设置注释中 // 或 /* 后是否有空格。
