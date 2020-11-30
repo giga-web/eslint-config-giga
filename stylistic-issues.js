@@ -233,16 +233,16 @@ module.exports = {
     }],
 
     // 设置函数的最大行数，以帮助维护和降低复杂性。行数和语句数不一样。
-    "max-lines-per-function": ["error", {
-      // 设置函数的最大行数
-      "max": 50,
-      // 忽略纯粹由空格组成的行。
-      "skipBlankLines": true,
-      // 忽略仅包含注释的行。
-      "skipComments": true,
-      // 包括 IIFE (立即调用函数表达式)中包含的代码。
-      "IIFEs": false,
-    }],
+    // "max-lines-per-function": ["error", {
+    //   // 设置函数的最大行数
+    //   "max": 50,
+    //   // 忽略纯粹由空格组成的行。
+    //   "skipBlankLines": true,
+    //   // 忽略仅包含注释的行。
+    //   "skipComments": true,
+    //   // 包括 IIFE (立即调用函数表达式)中包含的代码。
+    //   "IIFEs": false,
+    // }],
 
     // 设置嵌套回调的最大深度，以提高代码的清晰度。
     "max-nested-callbacks": ["error", 10],
