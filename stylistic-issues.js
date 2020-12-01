@@ -372,20 +372,22 @@ module.exports = {
     }],
 
     // 设置是否允许悬空的下划线
-    "no-underscore-dangle": ["error", {
+    "no-underscore-dangle": ["error"
+      //, {
       // 指定允许使用悬空的下划线的标识符，值是一个字符串数组
       // "allow": [],
       // 不允许`this` 对象的成员后面有悬空的下划线
-      "allowAfterThis": false,
+      // "allowAfterThis": false,
       // 不允许`super` 对象的成员后面有悬空的下划线
-      "allowAfterSuper": false,
+      // "allowAfterSuper": false,
       // 不允许 `this.constructor` 对象的成员后面有悬空的下划线
-      "allowAfterThisConstructor": false,
+      // "allowAfterThisConstructor": false,
       // 不强制方法名称使用悬空的下划线
-      "enforceInMethodNames": false,
+      // "enforceInMethodNames": false,
       // 不允许函数的参数使用悬空的下划线
-      "allowFunctionParams": false,
-    }],
+      // "allowFunctionParams": false,
+      // }
+    ],
 
     // --fix 设置在能使用条件判断的时候，禁止使用了三元操作符
     "no-unneeded-ternary": ["error", {
