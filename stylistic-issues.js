@@ -251,7 +251,7 @@ module.exports = {
     "max-params": ["error", 3],
 
     // 设置函数代码块中语句的最大数量。
-    "max-statements": ["error", 20, {
+    "max-statements": ["error", 50, {
       // 忽略顶层函数
       "ignoreTopLevelFunctions": true,
     }],
